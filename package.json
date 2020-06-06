@@ -1,0 +1,19 @@
+{
+  "name": "react-navigation-generated",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "node ./lib/index.js",
+    "create": "npm run build && npm run test",
+    "build": "rm -rf lib && tsc -p ."
+  },
+  "bin": {
+    "rn-gen": "./lib/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}
