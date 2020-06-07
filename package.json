@@ -2,14 +2,14 @@
   "name": "react-navigation-generated",
   "version": "0.0.5",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "start": "node ./lib/index.js",
     "create": "npm run build && npm run test",
     "build": "rm -rf lib && tsc -p ."
-  },
-  "bin": {
-    "rn-gen": "./lib/index.js"
   },
   "types": "lib/index.d.ts",
   "keywords": [
@@ -19,7 +19,9 @@
   ],
   "author": "siddhatiwari",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.8.2",
