@@ -6,11 +6,13 @@
     "declaration": true,
     "outDir": "lib",
     "strict": true,
+    "jsx": "react",
     "types": ["node"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true,
-    "checkJs": true // Type checking
+    "checkJs": true,
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*", "./lib/**/*"]

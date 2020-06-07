@@ -37,4 +37,4 @@ const logRootRoutes = (rootRouteMap: any) => {
   );
 };
 
-export { logRootRoutes };
+export default logRootRoutes;
