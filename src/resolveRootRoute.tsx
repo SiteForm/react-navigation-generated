@@ -18,10 +18,11 @@ const resolveRoute = (
   parentRouteName: string,
 ) => {
   if (isStackOrDrawer(route)) {
+    const navigatorRouteName = parentRouteName + '.' + routeName;
     const navigator = (
       <route.container.Navigator
         {...route.props}
-        children={childrenToRoutes(route.children, route, parentRouteName)}
+        children={childrenToRoutes(route.children, route, navigatorRouteName)}
       />
     );
     if (!parentNavigator) {
@@ -29,7 +30,7 @@ const resolveRoute = (
     } else {
       return (
         <parentNavigator.container.Screen
-          name={parentRouteName + '.' + routeName}
+          name={navigatorRouteName}
           component={() => navigator}
         />
       );
