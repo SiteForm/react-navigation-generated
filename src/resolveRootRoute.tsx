@@ -4,43 +4,47 @@ import { NavigatorItem, isStackOrDrawer } from './types';
 const childrenToRoutes = (
   children: { [name: string]: NavigatorItem },
   parentNavigator: NavigatorItem,
+  parentRouteName: string,
 ) =>
   Object.entries(children).map(([key, child]: any) =>
-    resolveRoute(key, child, parentNavigator),
+    resolveRoute(key, child, parentNavigator, parentRouteName),
   );
 
 const resolveRoute = (
   routeName: string | null,
   route: NavigatorItem,
+  // parentNavigator: NavigatorItem,
   parentNavigator: any,
+  parentRouteName: string,
 ) => {
-  if (isStackOrDrawer(route) && !parentNavigator) {
-    return (
+  if (isStackOrDrawer(route)) {
+    const navigator = (
       <route.container.Navigator
         {...route.props}
-        children={childrenToRoutes(route.children, route)}
+        children={childrenToRoutes(route.children, route, parentRouteName)}
       />
     );
-  } else if (isStackOrDrawer(route) && route.container) {
-    return (
-      <parentNavigator.container.Screen
-        name={routeName}
-        component={() => (
-          <route.container.Navigator
-            {...route.props}
-            children={childrenToRoutes(route.children, route)}
-          />
-        )}
-      />
-    );
+    if (!parentNavigator) {
+      return navigator;
+    } else {
+      return (
+        <parentNavigator.container.Screen
+          name={parentRouteName + '.' + routeName}
+          component={() => navigator}
+        />
+      );
+    }
   } else {
     return (
-      <parentNavigator.container.Screen name={routeName} {...route.props} />
+      <parentNavigator.container.Screen
+        name={parentRouteName + '.' + routeName}
+        {...route.props}
+      />
     );
   }
 };
 
-const resolveRootRoute = (rootRoute: NavigatorItem) =>
-  resolveRoute('', rootRoute, null);
+const resolveRootRoute = (rootRoute: NavigatorItem, rootRouteName: string) =>
+  resolveRoute('', rootRoute, null, rootRouteName);
 
 export default resolveRootRoute;

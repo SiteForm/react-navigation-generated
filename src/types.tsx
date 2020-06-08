@@ -29,5 +29,5 @@ export type RootAppNavigators = {
   [routeName: string]: NavigatorItem;
 };
 
-export const isStackOrDrawer = (s: any): s is Navigator<any> =>
+export const isStackOrDrawer = (s: NavigatorItem): s is Navigator<any> =>
   s.hasOwnProperty('children');
