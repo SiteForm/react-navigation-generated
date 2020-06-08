@@ -18,7 +18,8 @@ const resolveRoute = (
   parentRouteName: string,
 ) => {
   if (isStackOrDrawer(route)) {
-    const navigatorRouteName = parentRouteName + '.' + routeName;
+    const navigatorRouteName =
+      parentRouteName + (routeName === null ? '' : '.' + routeName);
     const navigator = (
       <route.container.Navigator
         {...route.props}
@@ -46,6 +47,6 @@ const resolveRoute = (
 };
 
 const resolveRootRoute = (rootRoute: NavigatorItem, rootRouteName: string) =>
-  resolveRoute('', rootRoute, null, rootRouteName);
+  resolveRoute(null, rootRoute, null, rootRouteName);
 
 export default resolveRootRoute;
