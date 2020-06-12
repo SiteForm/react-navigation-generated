@@ -1,4 +1,5 @@
 const START_IDENTIFIER = 'REACT_NAVIGATION_GENERATED_OUTPUT:';
+const START_IDENTIFIER_2 = 'REACT_NAVIGATION_GENERATED_OUTPUT_2:';
 
 const generateRouteMap = (
   [routeName, route]: [string, any],
@@ -32,9 +33,9 @@ const generateRootRoutes = (rootRouteMap: any) => {
 };
 
 const logRootRoutes = (rootRouteMap: any) => {
-  console.log(
-    START_IDENTIFIER + JSON.stringify(generateRootRoutes(rootRouteMap)),
-  );
+  const log = JSON.stringify(generateRootRoutes(rootRouteMap));
+  console.log(START_IDENTIFIER + log.slice(0, 6000));
+  console.log(START_IDENTIFIER_2 + log.slice(6000));
 };
 
 export default logRootRoutes;
