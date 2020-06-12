@@ -34,8 +34,8 @@ const generateRootRoutes = (rootRouteMap: any) => {
 
 const logRootRoutes = (rootRouteMap: any) => {
   const log = JSON.stringify(generateRootRoutes(rootRouteMap));
-  console.log(START_IDENTIFIER + log.slice(0, 6000));
-  console.log(START_IDENTIFIER_2 + log.slice(6000));
+  console.log(START_IDENTIFIER + log.slice(0, 7000));
+  console.log(START_IDENTIFIER_2 + log.slice(7000));
 };
 
 export default logRootRoutes;
