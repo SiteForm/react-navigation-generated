@@ -1,5 +1,5 @@
 const START_IDENTIFIER = 'REACT_NAVIGATION_GENERATED_OUTPUT:';
-const START_IDENTIFIER_2 = 'REACT_NAVIGATION_GENERATED_OUTPUT_2:';
+const END_IDENTIFIER = 'END_REACT_NAVIGATION_GENERATED';
 
 const generateRouteMap = (
   [routeName, route]: [string, any],
@@ -34,8 +34,11 @@ const generateRootRoutes = (rootRouteMap: any) => {
 
 const logRootRoutes = (rootRouteMap: any) => {
   const log = JSON.stringify(generateRootRoutes(rootRouteMap));
-  console.log(START_IDENTIFIER + log.slice(0, 7000));
-  console.log(START_IDENTIFIER_2 + log.slice(7000));
+  const splitLogs = log.match(/([\S\s]{1,7000})/g);
+  splitLogs?.forEach((str, i) => {
+    console.log(START_IDENTIFIER + str);
+  });
+  console.log(END_IDENTIFIER);
 };
 
 export default logRootRoutes;
