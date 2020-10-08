@@ -32,7 +32,7 @@ const resolveRoute = (
       return (
         <parentNavigator.container.Screen
           name={navigatorRouteName}
-          component={() => navigator}
+          children={() => navigator}
         />
       );
     }
