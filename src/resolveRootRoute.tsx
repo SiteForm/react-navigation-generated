@@ -23,6 +23,7 @@ const resolveRoute = (
     const navigator = (
       <route.container.Navigator
         {...route.props}
+        key={navigatorRouteName}
         children={childrenToRoutes(route.children, route, navigatorRouteName)}
       />
     );
@@ -31,16 +32,21 @@ const resolveRoute = (
     } else {
       return (
         <parentNavigator.container.Screen
+          key={navigatorRouteName}
           name={navigatorRouteName}
           children={() => navigator}
         />
       );
     }
   } else {
+    const { component: C, ...rest } = route.props;
+    const screenName = parentRouteName + '.' + routeName;
     return (
       <parentNavigator.container.Screen
-        name={parentRouteName + '.' + routeName}
-        {...route.props}
+        {...rest}
+        key={screenName}
+        name={screenName}
+        children={() => <C />}
       />
     );
   }
