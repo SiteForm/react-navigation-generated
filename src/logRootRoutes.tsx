@@ -34,10 +34,7 @@ const generateRootRoutes = (rootRouteMap: any) => {
 
 const logRootRoutes = (rootRouteMap: any) => {
   const log = JSON.stringify(generateRootRoutes(rootRouteMap));
-  const splitLogs = log.match(/([\S\s]{1,7000})/g);
-  splitLogs?.forEach((str, i) => {
-    console.log(START_IDENTIFIER + str);
-  });
+  console.log(START_IDENTIFIER + log);
   console.log(END_IDENTIFIER);
 };
 
