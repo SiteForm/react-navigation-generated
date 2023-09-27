@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-generated",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "main": "lib/index.js",
   "files": [
@@ -28,11 +28,11 @@
     "@react-navigation/drawer": "^5.8.2",
     "@react-navigation/native": "^5.5.1",
     "@react-navigation/stack": "^5.4.2",
-    "react": "^18.2.0",
-    "react-native": "^0.71.8",
-    "react-native-gesture-handler": "~2.9.0",
-    "react-native-reanimated": "~2.14.4",
-    "react-native-safe-area-context": "4.5.0",
-    "react-native-screens": "~3.20.0"
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-reanimated": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*"
   }
 }
