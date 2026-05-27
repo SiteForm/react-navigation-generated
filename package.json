@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node ./lib/index.js",
     "create": "npm run build && npm run test",
-    "build": "rm -rf lib && tsc -p . --noCheck",
+    "build": "rm -rf lib && tsc -p .",
     "prepare": "npm run build"
   },
   "types": "lib/index.d.ts",
@@ -21,13 +21,13 @@
   "author": "siddhatiwari",
   "license": "ISC",
   "devDependencies": {
-    "@types/react": "^18.2.21",
+    "@types/react": "^19.0.0",
     "typescript": "^5.7.0"
   },
   "dependencies": {
-    "@react-navigation/drawer": "^5.8.2",
-    "@react-navigation/native": "^5.5.1",
-    "@react-navigation/stack": "^5.4.2",
+    "@react-navigation/drawer": "^7.5.8",
+    "@react-navigation/native": "^7.1.17",
+    "@react-navigation/stack": "^7.4.8",
     "react": "*",
     "react-native": "*",
     "react-native-gesture-handler": "*",

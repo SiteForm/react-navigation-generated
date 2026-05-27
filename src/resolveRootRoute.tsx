@@ -13,7 +13,6 @@ const childrenToRoutes = (
 const resolveRoute = (
   routeName: string | null,
   route: NavigatorItem,
-  // parentNavigator: NavigatorItem,
   parentNavigator: any,
   parentRouteName: string,
 ) => {
@@ -23,6 +22,7 @@ const resolveRoute = (
     const navigator = (
       <route.container.Navigator
         {...route.props}
+        id={navigatorRouteName}
         key={navigatorRouteName}
         children={childrenToRoutes(route.children, route, navigatorRouteName)}
       />
