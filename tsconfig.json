@@ -5,7 +5,7 @@
     "declaration": true,
     "lib": ["es6", "es2015", "dom"],
     "outDir": "lib",
-    "strict": false,
+    "strict": true,
     "jsx": "react",
     "esModuleInterop": true,
     "resolveJsonModule": true,
